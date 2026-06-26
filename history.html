@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша история | Сиреневый Аккорд</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C4A4F5;
+            --primary-dark: #A383D6;
+            --bg-top: #8FA5F0;
+            --bg-menu: #E6EAF5;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Nunito', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        header {
+            background: linear-gradient(135deg, var(--bg-top), #A3B9E6);
+            padding: 40px 0 20px;
+            color: white;
+            text-align: center;
+        }
+        .header-title { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        .header-subtitle { font-size: 18px; font-weight: 400; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+        .nav-btn {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .nav-btn:hover { background: var(--primary); color: white; }
+        .nav-btn.active { background: var(--primary); color: white; }
+        .main-content { padding: 60px 0; }
+        .section-title-center { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--text-dark); }
+        .welcome-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 20px;
+            background: var(--bg-menu);
+            border-radius: 15px;
+        }
+        .timeline-year {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            min-width: 80px;
+        }
+        .timeline-content p { color: #555; line-height: 1.6; }
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .header-title { font-size: 24px; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline-item { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title"> <span>🎵</span>
+                <span>Сиреневый Аккорд</span>
+                <span>🎻</span></div>
+            <p class="header-subtitle">Музыкальная школа — место, где раскрывается талант!</p>
+            <div class="nav-grid">
+                <a href="index.html" class="nav-btn">🏠 Главная</a>
+                <a href="program.html" class="nav-btn">📋 Программа</a>
+                <a href="teachers.html" class="nav-btn">🎓 Преподаватели</a>
+                <a href="history.html" class="nav-btn active">📜 Наша история</a>
+                <a href="news.html" class="nav-btn">📰 Новости</a>
+                <a href="schedule.html" class="nav-btn">🗓️ Расписание</a>
+                <a href="materials.html" class="nav-btn">📚 Материалы</a>
+                <a href="reviews.html" class="nav-btn">💬 Отзывы</a>
+                <a href="contacts.html" class="nav-btn">📞 Контакты</a>
+                <a href="faq.html" class="nav-btn">❓ Вопрос-ответ</a>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title-center">Наша история</h2>
+            <div class="welcome-section">
+                <p style="color: #666; font-size: 18px; margin-bottom: 20px;">
+                    Музыкальная школа «Сиреневый Аккорд» была основана в 2015 году небольшой группой энтузиастов-музыкантов. 
+                    Изначально это была маленькая студия в спальном районе, где занимались всего 10 учеников.
+                </p>
+                <p style="color: #666; font-size: 18px; margin-bottom: 20px;">
+                    Сегодня мы — это большая команда профессионалов, у нас 5 просторных филиалов по городу и более 500 учеников разных возрастов. 
+                    Мы гордимся тем, что наши выпускники регулярно побеждают на городских конкурсах, а некоторые продолжают обучение в музыкальных училищах.
+                </p>
+                <p style="color: #666; font-size: 18px;">
+                    Наша главная ценность — это атмосфера творчества и поддержки, которую мы стараемся сохранять с самого первого дня работы.
+                </p>
+                <div style="font-size: 60px; margin-top: 30px;"> <p> <img src="школа.jpg"> </p></div>
+            
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Музыкальная школа "Сиреневый Аккорд". Все права защищены.</p>
+            <p style="font-size: 14px; margin-top: 10px; opacity: 0.7;">г. Москва, ул. Музыкальная, д. 1 | +7 (999) 000-00-00</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Материалы | Сиреневый Аккорд</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C4A4F5;
+            --primary-dark: #A383D6;
+            --bg-top: #8FA5F0;
+            --bg-menu: #E6EAF5;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Nunito', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        header {
+            background: linear-gradient(135deg, var(--bg-top), #A3B9E6);
+            padding: 40px 0 20px;
+            color: white;
+            text-align: center;
+        }
+        .header-title { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        .header-subtitle { font-size: 18px; font-weight: 400; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+        .nav-btn {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .nav-btn:hover { background: var(--primary); color: white; }
+        .nav-btn.active { background: var(--primary); color: white; }
+        .main-content { padding: 60px 0; }
+        .section-title-center { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--text-dark); }
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .material-card {
+            background: #f5f8fc;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .material-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            background: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #5bc4ff;
+        }
+        .material-content h4 { margin: 0 0 8px; font-size: 18px; color: #2c3e50; }
+        .material-content p { margin: 0 0 14px; font-size: 14px; color: #666; }
+        .material-link {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #0a66c2;
+            padding: 8px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .header-title { font-size: 24px; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title"> <span>🎵</span>
+                <span>Сиреневый Аккорд</span>
+                <span>🎻</span></div>
+            <p class="header-subtitle">Музыкальная школа — место, где раскрывается талант!</p>
+            <div class="nav-grid">
+                <a href="index.html" class="nav-btn">🏠 Главная</a>
+                <a href="program.html" class="nav-btn">📋 Программа</a>
+                <a href="teachers.html" class="nav-btn">🎓 Преподаватели</a>
+                <a href="history.html" class="nav-btn">📜 Наша история</a>
+                <a href="news.html" class="nav-btn">📰 Новости</a>
+                <a href="schedule.html" class="nav-btn">🗓️ Расписание</a>
+                <a href="materials.html" class="nav-btn active">📚 Материалы</a>
+                <a href="reviews.html" class="nav-btn">💬 Отзывы</a>
+                <a href="contacts.html" class="nav-btn">📞 Контакты</a>
+                <a href="faq.html" class="nav-btn">❓ Вопрос-ответ</a>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title-center">Полезные материалы</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 32px; color: #666; line-height: 1.6;">
+                Здесь собраны ссылки, шпаргалки и документы, которые помогут вам в обучении. 
+                Все материалы подготовлены нашими преподавателями специально для учеников «Сиреневого Аккорда».
+            </p>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="material-icon">📝</div>
+                    <div class="material-content">
+                        <h4>Основы нотной грамоты</h4>
+                        <p>Шпаргалка по ключам, длительностям нот и паузам. Идеально для распечатки.</p>
+                        <a href="#" class="material-link">Скачать PDF</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">🎵</div>
+                    <div class="material-content">
+                        <h4>Таблица интервалов</h4>
+                        <p>Удобная таблица с названиями, количеством тонов и примерами звучания.</p>
+                        <a href="#" class="material-link">Открыть в браузере</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">⏱️</div>
+                    <div class="material-content">
+                        <h4>Онлайн-метроном</h4>
+                        <p>Настройте темп от 40 до 200 BPM для отработки сложных пассажей.</p>
+                        <a href="#" class="material-link">Перейти к метроному</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">🎸</div>
+                    <div class="material-content">
+                        <h4>Справочник аккордов</h4>
+                        <p>Схемы основных аккордов для гитары, укулеле и фортепиано.</p>
+                        <a href="#" class="material-link">Смотреть схемы</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">🎤</div>
+                    <div class="material-content">
+                        <h4>Распевки для голоса</h4>
+                        <p>Аудио-примеры и текстовые описания базовых распевок.</p>
+                        <a href="#" class="material-link">Слушать примеры</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">📚</div>
+                    <div class="material-content">
+                        <h4>Как заниматься дома</h4>
+                        <p>Рекомендации наших педагогов: сколько времени уделять разным видам работы.</p>
+                        <a href="#" class="material-link">Читать советы</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">🏆</div>
+                    <div class="material-content">
+                        <h4>Календарь конкурсов</h4>
+                        <p>Список ближайших городских и онлайн-конкурсов, дедлайны и условия участия.</p>
+                        <a href="#" class="material-link">Посмотреть календарь</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">🎥</div>
+                    <div class="material-content">
+                        <h4>Архив выступлений</h4>
+                        <p>Видеозаписи отчётных концертов школы. Смотрите и ищите себя!</p>
+                        <a href="#" class="material-link">Смотреть видео</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Музыкальная школа "Сиреневый Аккорд". Все права защищены.</p>
+            <p style="font-size: 14px; margin-top: 10px; opacity: 0.7;">г. Москва, ул. Музыкальная, д. 1 | +7 (999) 000-00-00</p>
+        </div>
+    </footer>
+</body>
+</html>

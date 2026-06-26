@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание | Сиреневый Аккорд</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C4A4F5;
+            --primary-dark: #A383D6;
+            --bg-top: #8FA5F0;
+            --bg-menu: #E6EAF5;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Nunito', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        header {
+            background: linear-gradient(135deg, var(--bg-top), #A3B9E6);
+            padding: 40px 0 20px;
+            color: white;
+            text-align: center;
+        }
+        .header-title { font-size: 32px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .header-subtitle { font-size: 18px; font-weight: 400; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+        .nav-btn {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .nav-btn:hover { background: var(--primary); color: white; }
+        .nav-btn.active { background: var(--primary); color: white; }
+        .main-content { padding: 60px 0; }
+        .section-title-center { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--text-dark); }
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .schedule-room {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .schedule-room h3 {
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--bg-menu);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+        .slots-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 12px;
+        }
+        .slot-card {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 0;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+        .slot-time {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        .slot-name {
+            font-weight: 500;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        .slot-teacher {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.2;
+        }
+        .slot-free {
+            color: #4caf50;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        .slot-break {
+            color: #d32f2f;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .header-title { font-size: 24px; }
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title">
+                <span>🎵</span>
+                <span>Сиреневый Аккорд</span>
+                <span>🎻</span>
+            </div>
+            <p class="header-subtitle">Музыкальная школа — место, где раскрывается талант!</p>
+            <div class="nav-grid">
+                <a href="index.html" class="nav-btn">🏠 Главная</a>
+                <a href="program.html" class="nav-btn">📋 Программа</a>
+                <a href="teachers.html" class="nav-btn">🎓 Преподаватели</a>
+                <a href="history.html" class="nav-btn">📜 Наша история</a>
+                <a href="news.html" class="nav-btn">📰 Новости</a>
+                <a href="schedule.html" class="nav-btn active">🗓️ Расписание</a>
+                <a href="materials.html" class="nav-btn">📚 Материалы</a>
+                <a href="reviews.html" class="nav-btn">💬 Отзывы</a>
+                <a href="contacts.html" class="nav-btn">📞 Контакты</a>
+                <a href="faq.html" class="nav-btn">❓ Вопрос-ответ</a>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title-center">Расписание занятий</h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; padding: 0 15px;">
+                <p style="color: #666; font-size: 16px; line-height: 1.6;">
+                    ⚠️ <strong>Важно:</strong> Это пример загруженности залов. 
+                    Мы составляем расписание индивидуально под каждого ученика.
+                </p>
+            </div>
+
+            <div class="schedule-container">
+
+                <!-- ЗАЛ 1 -->
+                <div class="schedule-room">
+                    <h3>🎹 Зал 1: Фортепиано</h3>
+                    <div class="slots-list">
+                        <div class="slot-card">
+                            <div class="slot-time">09:00 - 10:00</div>
+                            <div class="slot-name">Детский класс</div>
+                            <div class="slot-teacher">Анна П.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">10:00 - 11:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">12:00 - 13:00</div>
+                            <div class="slot-break">Перерыв</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">13:00 - 14:00</div>
+                            <div class="slot-name">Продвинутые</div>
+                            <div class="slot-teacher">Анна П.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">14:00 - 15:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">15:00 - 16:00</div>
+                            <div class="slot-name">Подготовка к конкурсу</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">16:00 - 17:00</div>
+                            <div class="slot-free">Свободно (Вечер)</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">17:00 - 18:00</div>
+                            <div class="slot-name">Индивидуальные</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">18:00 - 19:00</div>
+                            <div class="slot-free">Свободно (Пик)</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">19:00 - 20:00</div>
+                            <div class="slot-name">Взрослые группы</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">20:00 - 21:00</div>
+                            <div class="slot-free">Свободно (Поздний)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ЗАЛ 2 -->
+                <div class="schedule-room">
+                    <h3>🎸 Зал 2: Гитара и Укулеле</h3>
+                    <div class="slots-list">
+                        <div class="slot-card">
+                            <div class="slot-time">09:00 - 10:00</div>
+                            <div class="slot-name">—</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">10:00 - 11:00</div>
+                            <div class="slot-name">Акустика</div>
+                            <div class="slot-teacher">Иван С.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">11:00 - 12:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">12:00 - 13:00</div>
+                            <div class="slot-break">Перерыв</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">13:00 - 14:00</div>
+                            <div class="slot-name">Укулеле (нач.)</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">14:00 - 15:00</div>
+                            <div class="slot-name">Электрогитара</div>
+                            <div class="slot-teacher">Иван С.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">15:00 - 16:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">16:00 - 17:00</div>
+                            <div class="slot-name">Индивидуальные</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">17:00 - 18:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">18:00 - 19:00</div>
+                            <div class="slot-name">Рок-группа</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">19:00 - 20:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">20:00 - 21:00</div>
+                            <div class="slot-name">Индивидуальные (Вечер)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ЗАЛ 3 -->
+                <div class="schedule-room">
+                    <h3>🎤 Зал 3: Вокал и Теория</h3>
+                    <div class="slots-list">
+                        <div class="slot-card">
+                            <div class="slot-time">09:00 - 10:00</div>
+                            <div class="slot-name">Сольфеджио А</div>
+                            <div class="slot-teacher">Елена К.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">10:00 - 11:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">11:00 - 12:00</div>
+                            <div class="slot-name">Вокал (Инд.)</div>
+                            <div class="slot-teacher">Елена К.</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">12:00 - 13:00</div>
+                            <div class="slot-break">Перерыв</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">13:00 - 14:00</div>
+                            <div class="slot-name">Распевки</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">14:00 - 15:00</div>
+                            <div class="slot-name">Теория (Взрослые)</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">15:00 - 16:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">16:00 - 17:00</div>
+                            <div class="slot-name">Сценическое мастерство</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">17:00 - 18:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">18:00 - 19:00</div>
+                            <div class="slot-name">Эстрадный вокал</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">19:00 - 20:00</div>
+                            <div class="slot-free">Свободно</div>
+                        </div>
+                        <div class="slot-card">
+                            <div class="slot-time">20:00 - 21:00</div>
+                            <div class="slot-name">Вокал (Инд.)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Музыкальная школа "Сиреневый Аккорд". Все права защищены.</p>
+            <p style="font-size: 14px; margin-top: 10px; opacity: 0.7;">г. Москва, ул. Музыкальная, д. 1 | +7 (999) 000-00-00</p>
+        </div>
+    </footer>
+</body>
+</html>
